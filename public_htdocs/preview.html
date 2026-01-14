@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Theme Preview - Presidential AI Challenge</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="css/themes/presidential-navy.css">
+    <style>
+        /* Theme Switcher Styles */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 280px;
+        }
+        .theme-switcher h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0 0 16px 0;
+            font-size: 1rem;
+            color: #1a365d;
+            border-bottom: 2px solid #1a365d;
+            padding-bottom: 8px;
+        }
+        .theme-btn {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background: #f8fafc;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #334155;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        .theme-btn:hover {
+            border-color: #1a365d;
+            background: #f1f5f9;
+        }
+        .theme-btn.active {
+            border-color: #1a365d;
+            background: #1a365d;
+            color: white;
+        }
+        .theme-btn small {
+            display: block;
+            font-weight: 400;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .theme-btn.active small {
+            color: #cbd5e1;
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1a365d;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600;
+            z-index: 999;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .theme-switcher {
+                top: auto;
+                bottom: 20px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Switcher Panel -->
+    <div class="theme-switcher" id="themeSwitcher">
+        <h3>Select Theme</h3>
+        <button class="theme-btn active" onclick="switchTheme('presidential-navy', this)">
+            A: Presidential Navy
+            <small>Deep navy + gold accents</small>
+        </button>
+        <button class="theme-btn" onclick="switchTheme('american-modern', this)">
+            B: American Modern
+            <small>Clean white + navy/red</small>
+        </button>
+        <button class="theme-btn" onclick="switchTheme('classic-federal', this)">
+            C: Classic Federal
+            <small>Traditional government style</small>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <img src="images/logos/presidential-ai-challenge.png" alt="Presidential AI Challenge" onerror="this.style.display='none'">
+            <img src="images/logos/ai-gov-logo.png" alt="AI.GOV" onerror="this.style.display='none'">
+        </div>
+
+        <header>
+            <h1>Brain Rot ML Training Data Collection</h1>
+            <p style="color: #475569; margin-bottom: 16px; font-family: -apple-system, sans-serif;">
+                A submission for the Presidential AI Challenge - Inspiring AI Innovation in America
+            </p>
+            <div class="privacy-notice">
+                <strong>Privacy Notice:</strong> This website does not track or store any personal data. 
+                All submissions are anonymous and used solely for educational purposes.
+            </div>
+        </header>
+
+        <main>
+            <form id="brainrot-form" enctype="multipart/form-data">
+                <div class="submission-area">
+                    <h2>Submit Brain Rot Content</h2>
+                    
+                    <div class="input-tabs">
+                        <button type="button" class="tab-btn active" data-tab="text">Text Content</button>
+                        <button type="button" class="tab-btn" data-tab="image">Image Content</button>
+                    </div>
+
+                    <div id="text-tab" class="tab-content active">
+                        <div class="text-input-area">
+                            <textarea id="text-content" name="text_content" 
+                                placeholder="Paste brain rot content from Facebook, Instagram, TikTok, etc...
+
+Mobile: Long-press in this area and select 'Paste'
+Desktop: Ctrl+V (Cmd+V on Mac)
+
+Include captions, comments, hashtags, or any toxic text content..." 
+                                rows="8"></textarea>
+                            <div class="paste-hint">
+                                <i>Can also paste images directly into this text area on some devices</i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="image-tab" class="tab-content">
+                        <div class="mobile-hints">
+                            <div class="social-media-tips">
+                                <h4>Mobile Tips for Social Media Content:</h4>
+                                <ul>
+                                    <li><strong>Images:</strong> Long-press → Copy Image → Paste in text area above</li>
+                                    <li><strong>Screenshots:</strong> Take screenshot → Use "Select File" below</li>
+                                    <li><strong>Videos:</strong> Save to camera roll → Use "Select File" below</li>
+                                    <li><strong>Text Posts:</strong> Copy text → Paste in text area above</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="file-drop-area" id="file-drop-area">
+                            <div class="drop-zone">
+                                <div class="drop-icon">📁</div>
+                                <p>Select media from your device</p>
+                                <p>or drag and drop files here</p>
+                                <button type="button" class="select-file-btn">Select Image/Video File</button>
+                                <input type="file" id="image-input" name="image_content" 
+                                    accept="image/*,video/*" style="display: none;">
+                            </div>
+                            <div class="file-preview" id="file-preview" style="display: none;">
+                                <img id="preview-image" alt="Preview" style="display: none;">
+                                <video id="preview-video" controls style="display: none;"></video>
+                                <div class="file-info" id="file-info"></div>
+                                <button type="button" class="remove-file-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="categories-section">
+                    <h3>Select Brain Rot Categories</h3>
+                    <p class="category-instruction">Check all categories that apply to your submission:</p>
+                    
+                    <div class="categories-grid">
+                        <label class="category-item">
+                            <input type="checkbox" name="categories[]" value="misinformation">
+                            <div class="category-content">
+                                <strong>1. Misinformation & Conspiracy</strong>
+                                <span>False information, conspiracy theories, and misleading claims</span>
+                            </div>
+                        </label>
+
+                        <label class="category-item">
+                            <input type="checkbox" name="categories[]" value="toxic">
+                            <div class="category-content">
+                                <strong>2. Toxic Negativity & Trolling</strong>
+                                <span>Hateful comments, cyberbullying, and inflammatory content</span>
+                            </div>
+                        </label>
+
+                        <label class="category-item">
+                            <input type="checkbox" name="categories[]" value="clickbait">
+                            <div class="category-content">
+                                <strong>3. Clickbait & Outrage Bait</strong>
+                                <span>Sensationalized headlines designed to provoke reactions</span>
+                            </div>
+                        </label>
+
+                        <label class="category-item">
+                            <input type="checkbox" name="categories[]" value="superficial">
+                            <div class="category-content">
+                                <strong>4. Superficial Trends & Vanity</strong>
+                                <span>Appearance-focused content and shallow trend-chasing</span>
+                            </div>
+                        </label>
+
+                        <label class="category-item">
+                            <input type="checkbox" name="categories[]" value="meme_overload">
+                            <div class="category-content">
+                                <strong>5. Meme Overload & Context Loss</strong>
+                                <span>Overwhelming memes that lose original meaning</span>
+                            </div>
+                        </label>
+
+                        <label class="category-item">
+                            <input type="checkbox" name="categories[]" value="doomscrolling">
+                            <div class="category-content">
+                                <strong>6. Doomscrolling & Anxiety Loops</strong>
+                                <span>Content promoting endless scrolling and negative emotions</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn">Submit for ML Training</button>
+                    <button type="button" id="clear-btn">Clear Form</button>
+                </div>
+
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </main>
+
+        <footer>
+            <div class="privacy-details">
+                <h4>Privacy & Data Protection</h4>
+                <ul>
+                    <li>No personal identifiers are collected</li>
+                    <li>No IP addresses are logged</li>
+                    <li>No cookies or tracking scripts are used</li>
+                    <li>All submissions are anonymous</li>
+                    <li>Data is used exclusively for educational ML training</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Theme switcher
+        function switchTheme(themeName, btn) {
+            document.getElementById('theme-stylesheet').href = 'css/themes/' + themeName + '.css';
+            document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tab = this.dataset.tab;
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(tab + '-tab').classList.add('active');
+            });
+        });
+
+        // File selection
+        document.querySelector('.select-file-btn').addEventListener('click', function() {
+            document.getElementById('image-input').click();
+        });
+    </script>
+</body>
+</html>

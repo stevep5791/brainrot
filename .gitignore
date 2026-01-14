@@ -1,0 +1,17 @@
+# Uploads directory (user submitted content)
+uploads/*
+!uploads/.gitkeep
+
+# Config with credentials
+config/database.php
+
+# Backups
+backups/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/

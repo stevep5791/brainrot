@@ -1,0 +1,526 @@
+/* Admin Panel Styles
+   Extends the Classic Federal theme for admin interfaces
+   Consistent, polished styling matching front-end quality */
+
+/* Admin-specific container with better padding */
+body.admin-page {
+    background: var(--off-white);
+}
+
+body.admin-page .container {
+    max-width: 1100px;
+    padding: 0;
+}
+
+/* Admin wrapper with proper margins */
+.admin-wrapper {
+    background: var(--white);
+    margin: 30px auto;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Admin Header Bar */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: var(--navy-dark);
+    color: var(--white);
+    border-bottom: 4px solid var(--burgundy);
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.admin-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-nav span {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.admin-nav strong {
+    color: var(--white);
+}
+
+.admin-nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    transition: background 0.15s ease;
+}
+
+.admin-nav a:hover {
+    background: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
+
+/* Main Content Area */
+.admin-main {
+    padding: 30px;
+}
+
+/* Filter Bar */
+.filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+}
+
+.filters input,
+.filters select {
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--white);
+    transition: border-color 0.15s ease;
+}
+
+.filters input {
+    flex: 1;
+    min-width: 250px;
+}
+
+.filters input:focus,
+.filters select:focus {
+    outline: none;
+    border-color: var(--navy-primary);
+}
+
+.filters select {
+    min-width: 180px;
+    cursor: pointer;
+}
+
+/* Consistent Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    line-height: 1.2;
+    vertical-align: middle;
+}
+
+/* Ensure button elements match anchor styling */
+button.btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn-primary {
+    background: var(--navy-primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--navy-medium);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--navy-primary);
+    border: 2px solid var(--navy-primary);
+    padding: 10px 22px;
+}
+
+.btn-secondary:hover {
+    background: var(--navy-primary);
+    color: var(--white);
+}
+
+.btn-danger {
+    background: var(--burgundy);
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background: var(--burgundy-light);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+}
+
+/* Clear link styled as button */
+.filters .btn-clear {
+    padding: 12px 20px;
+    color: var(--text-medium);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--white);
+    border: 2px solid var(--border);
+}
+
+.filters .btn-clear:hover {
+    border-color: var(--burgundy);
+    color: var(--burgundy);
+}
+
+/* Stats Bar */
+.stats {
+    display: flex;
+    gap: 30px;
+    padding: 16px 20px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-medium);
+}
+
+.stat-item strong {
+    color: var(--navy-primary);
+    font-weight: 700;
+}
+
+/* Data Table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.data-table th,
+.data-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.data-table th {
+    background: var(--navy-primary);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table th:first-child {
+    padding-left: 20px;
+}
+
+.data-table th:last-child {
+    padding-right: 20px;
+}
+
+.data-table td:first-child {
+    padding-left: 20px;
+}
+
+.data-table td:last-child {
+    padding-right: 20px;
+}
+
+.data-table tbody tr:hover {
+    background: var(--off-white);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table .truncate {
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-dark);
+}
+
+.data-table .cell-id {
+    font-weight: 600;
+    color: var(--navy-primary);
+}
+
+.data-table .cell-type {
+    color: var(--text-medium);
+    font-size: 0.85rem;
+}
+
+.data-table .cell-date {
+    color: var(--text-medium);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* Category Tags */
+.category-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    font-size: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2px;
+    color: var(--text-dark);
+}
+
+/* Media Indicator */
+.has-media {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.pagination a,
+.pagination span {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--white);
+    transition: all 0.15s ease;
+}
+
+.pagination a:hover {
+    background: var(--off-white);
+    border-color: var(--navy-primary);
+}
+
+.pagination .current {
+    background: var(--navy-primary);
+    color: var(--white);
+    border-color: var(--navy-primary);
+    font-weight: 600;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 60px 30px;
+    color: var(--text-medium);
+}
+
+.no-results h2 {
+    color: var(--navy-primary);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+}
+
+.no-results p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.95rem;
+}
+
+/* Detail View Styles */
+.meta-info {
+    display: flex;
+    gap: 24px;
+    padding: 16px 20px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+}
+
+.meta-info span {
+    color: var(--text-medium);
+}
+
+.meta-info strong {
+    color: var(--navy-primary);
+}
+
+.detail-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.detail-row {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    width: 140px;
+    font-weight: 600;
+    color: var(--navy-primary);
+    flex-shrink: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+}
+
+.detail-value {
+    flex: 1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.content-text {
+    background: var(--off-white);
+    padding: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+.media-preview img {
+    max-width: 100%;
+    max-height: 500px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+.media-info {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--text-medium);
+}
+
+/* Action Buttons Row */
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    align-items: center;
+}
+
+.actions form {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .admin-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .admin-main {
+        padding: 20px;
+    }
+
+    .filters {
+        padding: 16px;
+    }
+
+    .filters input {
+        min-width: 100%;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+
+    .data-table th:first-child,
+    .data-table td:first-child {
+        padding-left: 12px;
+    }
+
+    .data-table th:last-child,
+    .data-table td:last-child {
+        padding-right: 12px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .detail-label {
+        width: 100%;
+    }
+
+    .meta-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

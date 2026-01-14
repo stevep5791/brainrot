@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Mobile Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .info { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Debug Page - Mobile Test</h1>
+    <div class="info">
+        <strong>User Agent:</strong><br>
+        <span id="userAgent"></span>
+    </div>
+    <div class="info">
+        <strong>Screen Size:</strong><br>
+        <span id="screenSize"></span>
+    </div>
+    <div class="info">
+        <strong>SSL Status:</strong><br>
+        <span id="sslStatus"></span>
+    </div>
+    <div class="info">
+        <strong>JavaScript Working:</strong> ✅ YES
+    </div>
+    
+    <script>
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('screenSize').textContent = `${screen.width}x${screen.height}`;
+        document.getElementById('sslStatus').textContent = location.protocol;
+    </script>
+    
+    <p><a href="index.html">← Back to Main App</a></p>
+</body>
+</html>
